@@ -1,0 +1,62 @@
+.input-group {
+width: 100%;
+
+display: flex;
+
+flex-direction: column;
+
+gap: 0.5rem;
+}
+
+.input-group label {
+color: var(--text);
+
+font-size: var(--sm);
+
+font-weight: 600;
+}
+
+.input-group input {
+width: 100%;
+
+min-width: 0;
+
+min-height: 50px;
+
+padding:
+0.9rem
+1rem;
+
+border: 1px solid var(--border);
+
+border-radius: var(--radius);
+
+outline: none;
+
+background: var(--white);
+
+color: var(--text);
+
+font-size: var(--sm);
+
+transition:
+border-color 0.3s ease,
+box-shadow 0.3s ease,
+background 0.3s ease;
+}
+
+.input-group input::placeholder {
+color: var(--gray);
+}
+
+.input-group input:focus {
+border-color: var(--pink);
+
+box-shadow: var(--shadow);
+}
+
+.input-group input:disabled {
+opacity: 0.7;
+
+cursor: not-allowed;
+}

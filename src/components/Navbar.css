@@ -1,0 +1,61 @@
+.navbar {
+width: 100%;
+
+background: var(--navy);
+
+position: relative;
+
+z-index: 10;
+}
+
+.navbar-container {
+width: min(92%, 1400px);
+
+margin: 0 auto;
+
+min-height: 88px;
+
+display: grid;
+
+grid-template-columns:
+auto
+minmax(240px, 1fr);
+
+align-items: center;
+
+gap: clamp(
+1rem,
+2vw,
+2rem
+);
+}
+
+.navbar-logo {
+display: flex;
+
+align-items: center;
+}
+
+.navbar-logo img {
+width: 200px;
+
+height: auto;
+
+display: block;
+}
+
+.navbar-actions {
+display: flex;
+
+justify-content: flex-end;
+
+align-items: center;
+
+gap: 1rem;
+
+flex-wrap: wrap;
+}
+
+.navbar-actions .btn {
+min-width: 120px;
+}

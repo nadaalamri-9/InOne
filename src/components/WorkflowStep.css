@@ -1,0 +1,123 @@
+.workflow-step {
+position: relative;
+
+width: 100%;
+
+display: flex;
+
+flex-direction: column;
+
+align-items: center;
+
+text-align: center;
+}
+
+.workflow-circle {
+position: relative;
+
+width: clamp(
+80px,
+6vw,
+95px
+);
+
+height: clamp(
+80px,
+6vw,
+95px
+);
+
+margin-bottom: 1rem;
+
+background: var(--light-pink);
+
+border: 4px solid var(--white);
+
+border-radius: 50%;
+
+display: flex;
+
+align-items: center;
+justify-content: center;
+
+box-shadow: var(--shadow);
+}
+
+.workflow-circle img {
+width: clamp(
+32px,
+3vw,
+42px
+);
+
+height: clamp(
+32px,
+3vw,
+42px
+);
+
+object-fit: contain;
+}
+
+.workflow-badge {
+position: absolute;
+
+top: -8px;
+right: -8px;
+
+width: 30px;
+height: 30px;
+
+border-radius: 50%;
+
+background: var(--dark-purple);
+
+color: var(--white);
+
+display: flex;
+
+align-items: center;
+justify-content: center;
+
+font-size: var(--xs);
+
+font-weight: 700;
+}
+
+.workflow-line {
+position: absolute;
+
+top: 45px;
+
+left: 60%;
+
+width: 85%;
+
+height: 3px;
+
+background: var(--dark-purple);
+
+z-index: -1;
+}
+
+.workflow-step h3 {
+color: var(--text);
+
+font-size: var(--md);
+
+font-weight: 700;
+
+margin-bottom: 0.75rem;
+}
+
+.workflow-step p {
+max-width: 200px;
+
+margin: 0 auto;
+
+color: var(--gray);
+
+font-size: var(--sm);
+
+line-height: 1.7;
+}

@@ -1,0 +1,92 @@
+.audience-section {
+  width: 100%;
+
+  position: relative;
+
+  z-index: 5;
+
+  padding: 1rem 0 6rem;
+}
+
+.audience-header {
+  text-align: center;
+
+  max-width: 1200px;
+
+  margin: 0 auto clamp(2.5rem, 4vw, 4rem);
+}
+
+.audience-header span {
+  display: block;
+
+  color: var(--pink);
+
+  font-size: var(--md);
+
+  font-weight: 700;
+
+  margin-bottom: 0.75rem;
+}
+
+.audience-header h2 {
+  color: var(--text);
+
+  margin-bottom: 1rem;
+}
+
+.audience-header p {
+  color: var(--gray);
+
+  max-width: 650px;
+
+  margin: 0 auto;
+}
+
+.audience-grid {
+  display: grid;
+
+  grid-template-columns: repeat(3, minmax(280px, 1fr));
+
+  gap: clamp(1.5rem, 2vw, 2rem);
+}
+
+.audience-grid .card {
+  min-height: 250px;
+}
+
+.audience-card-icon {
+  width: 60px;
+
+  height: 60px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  background: var(--light-pink);
+
+  border-radius: var(--radius);
+
+  margin-bottom: 1rem;
+}
+
+.audience-card-icon img {
+  width: 32px;
+
+  height: 32px;
+
+  object-fit: contain;
+}
+
+.audience-grid h3 {
+  color: var(--text);
+
+  margin-bottom: 0.75rem;
+}
+
+.audience-grid p {
+  color: var(--gray);
+
+  line-height: 1.8;
+}

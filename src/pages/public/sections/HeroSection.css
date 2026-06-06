@@ -1,0 +1,143 @@
+.hero {
+  width: 100%;
+
+  position: relative;
+
+  overflow: hidden;
+
+  background: var(--bg);
+}
+
+.hero .section-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  z-index: 2;
+}
+
+.hero-wrapper {
+  width: 100%;
+
+  display: grid;
+
+  grid-template-columns:
+    minmax(520px, 1.1fr)
+    minmax(420px, 0.9fr);
+
+  align-items: center;
+
+  gap: clamp(2rem, 4vw, 5rem);
+}
+
+.hero-bg-shape {
+  clip-path: shape(
+    from 87.45% 45.02%,
+    curve to 92.48% 56.45% with 90.99% 50%,
+    curve to 92.05% 69.35% with 93.97% 62.91%,
+    curve to 82.42% 77.15% with 90.14% 75.8%,
+    curve to 71.01% 83.22% with 74.69% 78.49%,
+    curve to 61.91% 91.53% with 67.33% 87.95%,
+    curve to 49.74% 96.95% with 56.49% 95.12%,
+    curve to 38.7% 91.46% with 42.99% 98.79%,
+    curve to 25.99% 85.79% with 34.41% 84.13%,
+    curve to 15.38% 80.54% with 17.56% 87.44%,
+    curve to 14.3% 66.9% with 13.2% 73.65%,
+    curve to 13.33% 55.08% with 15.41% 60.16%,
+    curve to 11.2% 44.3% with 11.25% 50%,
+    curve to 11.95% 32.32% with 11.14% 38.59%,
+    curve to 16.84% 21.25% with 12.75% 26.06%,
+    curve to 27.31% 15.38% with 20.92% 16.44%,
+    curve to 38.83% 11.12% with 33.7% 14.32%,
+    curve to 50.39% 5.23% with 43.95% 7.93%,
+    curve to 62.85% 5.6% with 56.83% 2.53%,
+    curve to 72.7% 14.03% with 68.88% 8.67%,
+    curve to 79.11% 24.51% with 76.53% 19.39%,
+    curve to 82.8% 34.84% with 81.69% 29.63%,
+    curve to 87.45% 45.02% with 83.91% 40.04%
+  );
+
+  position: absolute;
+
+  right: clamp(-260px, -14vw, -100px);
+
+  top: clamp(-390px, -22vw, -180px);
+
+  width: clamp(760px, 62vw, 1400px);
+
+  height: clamp(760px, 62vw, 1400px);
+
+  background: var(--navy);
+
+  z-index: 0;
+}
+
+.hero-content {
+  position: relative;
+
+  z-index: 2;
+
+  max-width: 650px;
+}
+
+.hero-content h2 {
+  color: var(--text);
+
+  font-size: clamp(2.2rem, 4vw, 4rem);
+
+  line-height: 1.05;
+
+  font-weight: 800;
+
+  margin-bottom: 1rem;
+}
+
+.hero-content h2 span {
+  display: block;
+
+  background: var(--grad);
+
+  background-clip: text;
+  -webkit-background-clip: text;
+
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+}
+
+.pink-line {
+  width: 277px;
+  height: 10px;
+  background: var(--pink);
+  border-radius: var(--round);
+  margin-top: -4px;
+  margin-left: 300px;
+}
+
+.hero-content p {
+  max-width: 520px;
+  color: var(--text);
+  font-size: var(--sm);
+  line-height: 1.9;
+  margin-bottom: 2rem;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.hero-image {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-image img {
+  width: 100%;
+
+  max-width: 650px;
+
+  height: auto;
+}

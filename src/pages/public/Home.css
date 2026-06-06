@@ -1,0 +1,6 @@
+.home {
+  background: var(--bg);
+  width: 100%;
+  overflow-x: hidden;
+}
+
