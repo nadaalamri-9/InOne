@@ -32,8 +32,8 @@ gap: clamp(
 
 .navbar-logo {
 display: flex;
-
 align-items: center;
+margin-left: -3.6rem;
 }
 
 .navbar-logo img {

@@ -1,0 +1,51 @@
+.auth-tabs {
+  position: relative;
+  display: flex;
+  width: fit-content;
+  background: #e5e7eb;
+  border-radius: var(--round);
+  padding: 4px;
+  box-shadow: var(--shadow);
+  user-select: none;
+}
+
+.auth-tabs-slider {
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  width: calc(50% - 4px);
+  height: calc(100% - 8px);
+  background: var(--white);
+  border-radius: var(--round);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 1;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.auth-tabs.signup-active .auth-tabs-slider {
+  transform: translateX(100%);
+}
+
+.auth-tab {
+  position: relative;
+  z-index: 2;
+  flex: 1;
+  padding: 0.65rem 2.2rem;
+  border-radius: var(--round);
+  border: none;
+  background: transparent;
+  font-size: var(--sm);
+  font-weight: 600;
+  cursor: pointer;
+  color: var(--gray);
+  transition: color 0.3s ease;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+}
+
+.auth-tab.active {
+  color: var(--pink);
+}
