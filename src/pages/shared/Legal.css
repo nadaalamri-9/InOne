@@ -82,19 +82,32 @@
 }
 
 .legal-body {
-  width: min(94%, 1400px);
-  margin: 1rem auto 2rem;
+  width: min(90%, 1000px);
+  margin: 2rem auto;
 }
 
-.legal-sections,
-.contact-grid {
+.legal-sections {
   display: grid;
   gap: 1.5rem;
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(320px, 1fr));
+  gap: 1.5rem;
+}
+
+.legal-card {
+  height: auto;
 }
 
 .legal-card h2 {
   font-size: var(--md);
   margin-bottom: 0.75rem;
+}
+
+.legal-card p {
+  max-width: 68ch;
 }
 
 .legal-date {
@@ -103,17 +116,81 @@
   margin-bottom: 0.5rem;
 }
 
-.contact-grid {
-  grid-template-columns: repeat(2, 1fr);
-}
-
 .contact-wide {
-  grid-column: span 2;
+  grid-column: 1 / -1;
 }
 
 .contact-email {
   color: var(--pink);
   font-weight: 700;
+}
+
+.contact-form-card {
+  height: auto;
+}
+
+.contact-form-card > p {
+  margin-bottom: 1.5rem;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.contact-form-row {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.25rem;
+}
+
+.contact-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.contact-field label {
+  color: var(--text);
+  font-size: var(--sm);
+  font-weight: 600;
+}
+
+.contact-field textarea {
+  width: 100%;
+  min-height: 180px;
+  padding: 1rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--white);
+  color: var(--text);
+  font: inherit;
+  resize: vertical;
+  outline: none;
+  transition:
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.contact-field textarea::placeholder {
+  color: var(--gray);
+  font-size: var(--xs);
+}
+
+.contact-field textarea:focus {
+  border-color: var(--pink);
+  box-shadow: var(--shadow);
+}
+
+.contact-form .btn {
+  width: fit-content;
+}
+
+.contact-success {
+  color: var(--pink);
+  font-size: var(--xs);
+  font-weight: 600;
 }
 
 @media (max-width: 992px) {
@@ -151,5 +228,19 @@
 
   .contact-wide {
     grid-column: auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .legal-body {
+    width: min(92%, 760px);
+  }
+
+  .contact-form-row {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-form .btn {
+    width: 100%;
   }
 }
