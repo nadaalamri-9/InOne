@@ -1,3 +1,4 @@
+import { useEffect, useRef, useState } from "react";
 import "./WorkflowSection.css";
 import WorkflowStep from "../../../components/WorkflowStep";
 import User from "../../../assets/User.svg";
@@ -11,37 +12,66 @@ const steps = [
     number: "1",
     icon: User,
     title: "Create profile",
-    text: "Add your bio, skills, education and bootcamps",
+    text: "Add your bio, skills, education and bootcamps.",
   },
   {
     number: "2",
     icon: Folder,
     title: "Add projects",
-    text: "Use our structured template with results",
+    text: "Use our structured template with results.",
   },
   {
     number: "3",
     icon: Note,
     title: "Upload resume",
-    text: "PDF or Word, employers can download it",
+    text: "PDF or Word, employers can download it.",
   },
   {
     number: "4",
     icon: CheckCircle,
     title: "Get reviewed",
-    text: "Career coach reviews and approves",
+    text: "Career coach reviews and approves.",
   },
   {
     number: "5",
     icon: LinkIcon,
     title: "Share & get hired",
-    text: "Share your link and impress employers",
+    text: "Share your link and impress employers.",
   },
 ];
 
 function WorkflowSection() {
+  const sectionRef = useRef(null);
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const section = sectionRef.current;
+
+    if (!section) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+          observer.unobserve(section);
+        }
+      },
+      {
+        threshold: 0.2,
+      }
+    );
+
+    observer.observe(section);
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
-    <section className="workflow-section">
+    <section
+      id="workflow"
+      ref={sectionRef}
+      className={`workflow-section ${isVisible ? "show" : ""}`}
+    >
       <div className="section-container">
         <div className="workflow-header">
           <span>How it works</span>
@@ -51,15 +81,17 @@ function WorkflowSection() {
             employers.
           </p>
         </div>
+
         <div className="workflow-timeline">
-          {steps.map((s, i) => (
+          {steps.map((step, index) => (
             <WorkflowStep
-              key={s.number}
-              number={s.number}
-              icon={s.icon}
-              title={s.title}
-              text={s.text}
-              isLast={i === steps.length - 1}
+              key={step.number}
+              number={step.number}
+              icon={step.icon}
+              title={step.title}
+              text={step.text}
+              isLast={index === steps.length - 1}
+              delay={index * 0.12}
             />
           ))}
         </div>
@@ -67,4 +99,5 @@ function WorkflowSection() {
     </section>
   );
 }
+
 export default WorkflowSection;

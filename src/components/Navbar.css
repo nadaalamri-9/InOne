@@ -1,61 +1,98 @@
 .navbar {
-width: 100%;
-
-background: var(--navy);
-
-position: relative;
-
-z-index: 10;
+  width: 100%;
+  background: var(--navy);
+  position: relative;
+  z-index: 10;
 }
 
 .navbar-container {
-width: min(92%, 1400px);
+  width: min(92%, 1400px);
+  margin: 0 auto;
+  min-height: 96px;
 
-margin: 0 auto;
-
-min-height: 88px;
-
-display: grid;
-
-grid-template-columns:
-auto
-minmax(240px, 1fr);
-
-align-items: center;
-
-gap: clamp(
-1rem,
-2vw,
-2rem
-);
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: clamp(1rem, 2vw, 2rem);
 }
 
 .navbar-logo {
-display: flex;
-align-items: center;
-margin-left: -3.6rem;
+  display: flex;
+  align-items: center;
+  margin-left: -3.6rem;
 }
 
 .navbar-logo img {
-width: 200px;
+  width: 200px;
+  height: auto;
+  display: block;
+}
 
-height: auto;
+.navbar-links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10rem;
+  margin-top: 4px;
+}
 
-display: block;
+.navbar-links a {
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 1rem;
+  font-weight: 600;
+  position: relative;
+  transition: color 0.25s ease;
+}
+
+.navbar-links a:hover {
+  color: var(--white);
+}
+
+.navbar-links a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -8px;
+  width: 0;
+  height: 3px;
+  border-radius: 999px;
+  background: var(--grad);
+  transition: width 0.3s ease;
+}
+
+.navbar-links a:hover::after {
+  width: 100%;
 }
 
 .navbar-actions {
-display: flex;
-
-justify-content: flex-end;
-
-align-items: center;
-
-gap: 1rem;
-
-flex-wrap: wrap;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
 }
 
 .navbar-actions .btn {
-min-width: 120px;
+  min-width: 120px;
+}
+
+@media (max-width: 900px) {
+  .navbar-container {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    padding: 1rem 0;
+  }
+
+  .navbar-logo {
+    margin-left: 0;
+  }
+
+  .navbar-links {
+    gap: 1.25rem;
+    flex-wrap: wrap;
+  }
+
+  .navbar-actions {
+    justify-content: center;
+  }
 }

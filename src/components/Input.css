@@ -47,6 +47,7 @@ background 0.3s ease;
 
 .input-group input::placeholder {
 color: var(--gray);
+font-size: var(--xs);
 }
 
 .input-group input:focus {

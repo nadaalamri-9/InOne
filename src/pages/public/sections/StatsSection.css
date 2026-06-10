@@ -1,41 +1,57 @@
 .stats-section {
   width: 100%;
-
   position: relative;
-
   z-index: 5;
-
   padding: 0 0 1rem;
 }
 
 .stats-container {
-width: 92%;
+  width: 92%;
+  margin: 0 auto;
 
-margin: 0 auto;
+  background: var(--card-grad);
+  border-radius: var(--radius-lg);
 
-background: var(--card-grad);
+  padding: clamp(2rem, 3vw, 3rem);
 
-border-radius: var(--radius-lg);
+  display: grid;
+  grid-template-columns: repeat(3, minmax(220px, 1fr));
 
-padding:
-clamp(
-2rem,
-3vw,
-3rem
-);
+  gap: 2rem;
 
-display: grid;
+  box-shadow: var(--shadow);
+}
 
-grid-template-columns:
-repeat(
-3,
-minmax(
-220px,
-1fr
-)
-);
+.stat-item {
+  animation: statFadeUp 0.8s ease both;
+}
 
-gap: 2rem;
+.stat-item:nth-child(1) {
+  animation-delay: 0.1s;
+}
 
-box-shadow: var(--shadow);
+.stat-item:nth-child(2) {
+  animation-delay: 0.25s;
+}
+
+.stat-item:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+@keyframes statFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 900px) {
+  .stats-container {
+    grid-template-columns: 1fr;
+  }
 }

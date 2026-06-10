@@ -7,20 +7,39 @@ function HeroSection() {
   return (
     <section className="hero">
       <div className="hero-bg-shape"></div>
+
       <div className="section-container">
         <div className="hero-wrapper">
           <div className="hero-content">
             <h2>
               Showcase Your Skills,
-              <div className="pink-line"></div>
-              <span>Get Discovered.</span>
+              <span className="hero-gradient-text">
+                Get Discovered.
+              </span>
             </h2>
-            <p>WeCloudData Portfolio helps graduates showcase real projects, build a professional presence, and connect with employers.</p>
+
+            <div className="pink-line"></div>
+
+            <p>
+              WeCloudData Portfolio helps graduates showcase real projects,
+              build a professional presence, and connect with employers.
+            </p>
+
             <div className="hero-buttons">
-              <Link to="/signup"><Button variant="primary">Create Your Portfolio</Button></Link>
-              <Link to="/portfolios"><Button variant="secondary">Explore Portfolios</Button></Link>
+              <Link to="/signup">
+                <Button variant="primary">
+                  Create Your Portfolio
+                </Button>
+              </Link>
+
+              <Link to="/portfolios">
+                <Button variant="secondary">
+                  Explore Portfolios
+                </Button>
+              </Link>
             </div>
           </div>
+
           <div className="hero-image">
             <img src={hero1} alt="Hero Illustration" />
           </div>
@@ -29,4 +48,5 @@ function HeroSection() {
     </section>
   );
 }
+
 export default HeroSection;

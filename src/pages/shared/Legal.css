@@ -1,0 +1,155 @@
+.legal-page {
+  width: 100%;
+  min-height: 100vh;
+  background: var(--bg);
+  overflow-x: hidden;
+}
+
+.legal-hero {
+  width: 100%;
+  background:
+    radial-gradient(circle at 78% 48%, var(--legal-glow), transparent 34%),
+    var(--legal-hero-grad);
+  border-bottom-left-radius: 50% 7%;
+  border-bottom-right-radius: 50% 7%;
+}
+
+.legal-wrapper {
+  width: 100%;
+  min-height: 420px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8rem;
+  padding: 1rem 5vw 2rem;
+  box-sizing: border-box;
+}
+
+.legal-content {
+  flex: 0 1 470px;
+  min-width: 0;
+}
+
+.legal-kicker {
+  color: var(--pink);
+  font-weight: 800;
+  font-size: var(--md);
+  display: block;
+  margin-bottom: 0.7rem;
+}
+
+.legal-content h1 {
+  color: var(--navy);
+  font-size: var(--lg);
+  line-height: 1;
+  margin: 0 0 1.3rem;
+}
+
+.legal-gradient-text {
+  display: block;
+  background: var(--grad);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+}
+
+.legal-content p {
+  color: var(--text);
+  font-size: var(--sm);
+  line-height: 1.8;
+  margin-bottom: 2rem;
+  max-width: 430px;
+}
+
+.legal-actions {
+  display: flex;
+}
+
+.legal-image {
+  flex: 0 1 480px;
+  min-width: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.legal-image img {
+  width: 100%;
+  max-width: 380px;
+  height: auto;
+  object-fit: contain;
+}
+
+.legal-body {
+  width: min(94%, 1400px);
+  margin: 1rem auto 2rem;
+}
+
+.legal-sections,
+.contact-grid {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.legal-card h2 {
+  font-size: var(--md);
+  margin-bottom: 0.75rem;
+}
+
+.legal-date {
+  color: var(--gray);
+  font-size: var(--sm);
+  margin-bottom: 0.5rem;
+}
+
+.contact-grid {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.contact-wide {
+  grid-column: span 2;
+}
+
+.contact-email {
+  color: var(--pink);
+  font-weight: 700;
+}
+
+@media (max-width: 992px) {
+  .legal-wrapper {
+    min-height: auto;
+    flex-direction: column;
+    text-align: center;
+    gap: 2.5rem;
+    padding: 3rem 1.5rem 4rem;
+  }
+
+  .legal-content {
+    flex: none;
+  }
+
+  .legal-content p {
+    max-width: 100%;
+  }
+
+  .legal-actions {
+    justify-content: center;
+  }
+
+  .legal-image {
+    flex: none;
+  }
+
+  .legal-image img {
+    max-width: 360px;
+  }
+
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-wide {
+    grid-column: auto;
+  }
+}

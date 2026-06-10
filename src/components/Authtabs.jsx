@@ -9,7 +9,7 @@ function Authtabs() {
     <div className={`auth-tabs ${isSignup ? "signup-active" : ""}`}>
       <div className="auth-tabs-slider"></div>
       <Link to="/login" className={`auth-tab ${!isSignup ? "active" : ""}`}>Log In</Link>
-      <Link to="/signup" className={`auth-tab ${isSignup ? "active" : ""}`}>Sign UP</Link>
+      <Link to="/signup" className={`auth-tab ${isSignup ? "active" : ""}`}>Sign Up</Link>
     </div>
   );
 }
