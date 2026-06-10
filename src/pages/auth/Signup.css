@@ -3,13 +3,13 @@
   font-weight: 700;
   letter-spacing: -0.03em;
   color: var(--text);
-  margin-bottom: 0.25rem;
+  margin-bottom: 1rem;
 }
 
 .signup-subtitle {
   font-size: var(--xs);
   color: var(--gray);
-  margin-bottom: 0.35rem;
+  margin-bottom: 1rem;
 }
 
 .role-selector {
