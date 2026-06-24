@@ -2,10 +2,14 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.staticfiles import StaticFiles
 from pathlib import Path
+from sqlalchemy.orm import Session
+
 from .config import get_settings
-from .database import Base, engine
+from .database import Base, engine, SessionLocal
 from . import models
+from .models.user import User, UserRole
 from .routes import auth, profile, projects, portfolio, coach, employer, admin, ai
+
 
 settings = get_settings()
 
@@ -14,15 +18,16 @@ UPLOAD_BASE = Path(__file__).parent / "uploads"
 for sub in ("profile_pictures", "resumes", "project_screenshots"):
     (UPLOAD_BASE / sub).mkdir(parents=True, exist_ok=True)
 
+
 app = FastAPI(
     title="InOne API",
     description="Backend API for the InOne portfolio platform",
     version="1.0.0",
 )
-## for the Admin role in the live link
-from sqlalchemy.orm import Session
-from .database import SessionLocal
-from .models.user import User, UserRole
+
+
+Base.metadata.create_all(bind=engine)
+
 
 def ensure_admin():
     db: Session = SessionLocal()
@@ -37,9 +42,8 @@ def ensure_admin():
     finally:
         db.close()
 
-ensure_admin()
 
-Base.metadata.create_all(bind=engine)
+ensure_admin()
 
 
 app.add_middleware(
@@ -59,6 +63,7 @@ app.mount("/uploads", StaticFiles(directory=str(UPLOAD_BASE)), name="uploads")
 
 
 API_PREFIX = "/api"
+
 app.include_router(auth.router, prefix=API_PREFIX)
 app.include_router(profile.router, prefix=API_PREFIX)
 app.include_router(projects.router, prefix=API_PREFIX)
